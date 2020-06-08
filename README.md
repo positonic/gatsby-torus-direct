@@ -12,37 +12,36 @@
   A starter template for Gatsby and tor.us direct auth
 </h1>
 
-[tor.us](https://docs.tor.us/) - Authentication abstracted for the decentralized ecosystem
+[tor.us](https://docs.tor.us/) - bills itself as "authentication abstracted for the decentralized ecosystem". Give your users a smooth familiar onboarding experience by letting them sign up with google email accounts and other familiar OAuth providers.
 
-Built and designed to be trustless, users’ identities are not controlled by any central authority.
+Built and designed to be trustless, users’ identities are not controlled by any central authority, which means that your user owns the keys.
 
 [tor.us documentation](https://docs.tor.us/)
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+This boilerplate allows you to get tor.us up and running with Gatsby super easily. Just follow these simple steps:
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Set up your Google OAUTH ID**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    First get your new GATSBY_GOOGLE_CLIENT_ID by [creating an OAuth 2.0 client ID](https://console.developers.google.com/apis/credentials) here, setting 'Authorized redirect URIs' to http://localhost/8000/serviceworker/redirect
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
+2.  **Start developing.**
 
-1.  **Start developing.**
+    [Go to the Torus Developer Group](https://t.me/torusdev)
+    And request a custom verifier be set up, giving them your Google client id
 
-    Navigate into your new site’s directory and start it up.
+3.  **Start developing.**
 
-    ```shell
-    cd my-default-starter/
-    gatsby develop
-    ```
+    Make a copy of .env.example to .env.development and add values for:
+    GATSBY_GOOGLE_CLIENT_ID
+    GATSBY_VERIFIER_NAME
 
-1.  **Open the source code and start editing!**
+    That you acquired in the first 2 steps.
+
+    Now you're ready to go!
+
+4.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
@@ -50,60 +49,8 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
-
-A quick look at the top-level files and directories you'll see in a Gatsby project.
-
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+There is a gotcha for building at the Torus library isn't designed for server side rendering, so you need to lazy load all torus components as we have already done for src/components/login.js, otherwise you will get an error saying btoa is undefined or similar.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+This should work as is... Lucky you!
