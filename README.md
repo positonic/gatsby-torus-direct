@@ -2,11 +2,19 @@
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Gatsby" src="https://app.tor.us/v1.4.4/img/torus-logo-blue.7d2a4a6b.svg" width="60" />
+    
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  A starter template for Gatsby and tor.us direct auth
 </h1>
+
+[tor.us](https://docs.tor.us/) - Authentication abstracted for the decentralized ecosystem
+
+Built and designed to be trustless, users’ identities are not controlled by any central authority.
+
+[tor.us documentation](https://docs.tor.us/)
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
