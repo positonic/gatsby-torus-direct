@@ -2,6 +2,7 @@
 <p align="center">
   <a href="https://www.gatsbyjs.org">
     <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+     --- 
     <img alt="Gatsby" src="https://app.tor.us/v1.4.4/img/torus-logo-blue.7d2a4a6b.svg" width="180" />
     
   </a>
