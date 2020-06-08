@@ -31,13 +31,12 @@ This boilerplate allows you to get tor.us up and running with Gatsby super easil
     [Go to the Torus Developer Group](https://t.me/torusdev)
     And request a custom verifier be set up, giving them your Google client id
 
-3.  **Start developing.**
+3.  **Get the friendly torus folks to set up a custom verifier for you**
 
-    Make a copy of .env.example to .env.development and add values for:
+    Make a copy of .env.example called .env.development and add the values that you acquired in the first 2 steps above:
+    
     GATSBY_GOOGLE_CLIENT_ID
     GATSBY_VERIFIER_NAME
-
-    That you acquired in the first 2 steps.
 
     Now you're ready to go!
 
